@@ -1,0 +1,20 @@
+[
+  {
+    "Lattitude": 50.8139,
+    "Longitude": 4.3816,
+    "name": "ULB",
+    "description": "Université Libre de bruxelles"
+  },
+  {
+    "Lattitude": 50.8467,
+    "Longitude": 4.3517,
+    "name": "Grande Place",
+    "description": "La Grand-Place ou Grote Markt en néerlandais est la place centrale de la ville de Bruxelles"
+  },
+  {
+    "Lattitude": 50.8467,
+    "Longitude": 4.3525,
+    "name": "Palais de justice",
+    "description": "Le palais de justice de Bruxelles est un bâtiment imposant de style éclectique situé sur la place Poelaert dans la commune de Bruxelles-ville"
+  }
+]

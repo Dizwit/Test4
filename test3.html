@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carte de Bruxelles</title>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #mapid {
+        height: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      var mymap = L.map("mapid").setView([50.8466, 4.3528], 13);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+      }).addTo(mymap);
+
+      // Récupération des marqueurs depuis le fichier JSON à l'aide de jQuery
+      $.getJSON("csvjson.json", function (data) {
+        // Ajout des marqueurs sur la carte
+        for (var i = 0; i < data.length; i++) {
+          var marker = L.marker([data[i].lat, data[i].lon]).addTo(mymap);
+          marker.bindPopup(data[i].name);
+        }
+      });
+    </script>
+  </body>
+</html>
